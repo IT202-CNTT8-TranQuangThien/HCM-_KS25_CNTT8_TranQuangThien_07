@@ -115,7 +115,29 @@ Mời bạn chọn chức năng (1-8): ''')
             if not flag:
                 print(f'Không tìm thấy mã {id_delete}')
         case "5":
-            print('chuc nang 5')
+
+            flag_search = False
+            # tìm kiếm theo mã
+            id_search = input('Nhập mã TX muốn tìm kiếm: ').strip().upper()
+            for value in transaction:
+                if value["id"] == id_search:
+                    flag_search = True
+                    print('-- KẾT QUẢ ĐƯỢC TÌM KIẾM --')
+                    print(
+                        f'{value["id"]:<5} | {value["content"]:<30} | {value["type"]:<5} | {value["price"]:<15} | {value["tax"]:<10} | {value["actual"]:<16} | {value["classify"]:<17}')
+            if not flag_search:
+                print(f'Không tìm thấy mã {id_search}')
+            # content_search = input('Nhập nội dung cần tìm: ').lower()
+            # for value in transaction:
+            #     if str(value["content"]).lower() == content_search:
+            #         flag_search = True
+            #         print('-- KẾT QUẢ ĐƯỢC TÌM KIẾM --')
+            #         print(
+            #             f'{value["id"]:<5} | {value["content"]:<30} | {value["type"]:<5} | {value["price"]:<15} | {value["tax"]:<10} | {value["actual"]:<16} | {value["classify"]:<17}')
+            # if not flag_search:
+            #     print(f'Không tìm thấy mã {id_search}')
+
+
         case "6":
             print('chuc nang 6')
         case "7":
